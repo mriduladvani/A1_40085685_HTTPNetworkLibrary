@@ -1,16 +1,20 @@
 import socket
-HOST= 'www.facebook.com'
+HOST= 'www.tutorialpoint.com'
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_address = (HOST, 80)
 client_socket.connect(server_address)
 
-params= 'username:helloworld&pass=blah\r\n'
+params= 'licenseID=string&content=string&/paramsXML=string\r\n'
 header= """
-POST HTTP/1.1
-Host: www.facebook.com
+POST /cgi-bin/process.cgi HTTP/1.1
+User-Agent: Mozilla/4.0 (compatible; MSIE5.01; Windows NT)
+Host: www.tutorialspoint.com
 Content-Type: application/x-www-form-urlencoded
-Connection: keep-alive
+Content-Length: length
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: Keep-Alive
 """
 content_length= str(len(params.encode('ascii')))
 
